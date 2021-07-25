@@ -1,0 +1,80 @@
+com/hukacode/common/cqrs/AbstractUseCaseHandler.java
+ com.hukacode.common.cqrs.AbstractUseCaseHandler
+com/hukacode/common/usecase/Actor.java
+ com.hukacode.common.usecase.Actor
+com/hukacode/common/validation/annotation/FullName.java
+ com.hukacode.common.validation.annotation.FullName
+ com.hukacode.common.validation.annotation.FullName$List
+com/hukacode/common/validation/annotation/DepartmentName.java
+ com.hukacode.common.validation.annotation.DepartmentName
+ com.hukacode.common.validation.annotation.DepartmentName$List
+com/hukacode/common/validation/annotation/State.java
+ com.hukacode.common.validation.annotation.State
+ com.hukacode.common.validation.annotation.State$List
+com/hukacode/common/validation/annotation/Salary.java
+ com.hukacode.common.validation.annotation.Salary
+ com.hukacode.common.validation.annotation.Salary$List
+com/hukacode/common/validation/annotation/Street.java
+ com.hukacode.common.validation.annotation.Street
+ com.hukacode.common.validation.annotation.Street$List
+com/hukacode/common/validation/annotation/District.java
+ com.hukacode.common.validation.annotation.District
+ com.hukacode.common.validation.annotation.District$List
+com/hukacode/common/validation/annotation/Postal.java
+ com.hukacode.common.validation.annotation.Postal
+ com.hukacode.common.validation.annotation.Postal$List
+com/hukacode/common/validation/annotation/BankCode.java
+ com.hukacode.common.validation.annotation.BankCode
+ com.hukacode.common.validation.annotation.BankCode$List
+com/hukacode/common/usecase/UseCase.java
+ com.hukacode.common.usecase.UseCase
+com/hukacode/common/exception/EntityNotFoundException.java
+ com.hukacode.common.exception.EntityNotFoundException
+com/hukacode/common/usecase/Nothing.java
+ com.hukacode.common.usecase.Nothing
+com/hukacode/common/exception/BusinessException.java
+ com.hukacode.common.exception.BusinessException
+com/hukacode/common/usecase/ValidationException.java
+ com.hukacode.common.usecase.ValidationException
+com/hukacode/common/validation/annotation/Code.java
+ com.hukacode.common.validation.annotation.Code
+ com.hukacode.common.validation.annotation.Code$List
+com/hukacode/common/cqrs/UseCase.java
+ com.hukacode.common.cqrs.UseCase
+com/hukacode/common/log/annotation/DebugLog.java
+ com.hukacode.common.log.annotation.DebugLog
+com/hukacode/common/converter/ConverterException.java
+ com.hukacode.common.converter.ConverterException
+com/hukacode/common/converter/GenericConverter.java
+ com.hukacode.common.converter.GenericConverter
+com/hukacode/common/validation/annotation/Description.java
+ com.hukacode.common.validation.annotation.Description
+ com.hukacode.common.validation.annotation.Description$List
+com/hukacode/common/cqrs/UseCaseHandler.java
+ com.hukacode.common.cqrs.UseCaseHandler
+com/hukacode/common/validation/annotation/LastName.java
+ com.hukacode.common.validation.annotation.LastName
+ com.hukacode.common.validation.annotation.LastName$List
+com/hukacode/common/cqrs/Bus.java
+ com.hukacode.common.cqrs.Bus
+com/hukacode/common/validation/annotation/Phone.java
+ com.hukacode.common.validation.annotation.Phone
+ com.hukacode.common.validation.annotation.Phone$List
+com/hukacode/common/usecase/AbstractUseCaseHandler.java
+ com.hukacode.common.usecase.AbstractUseCaseHandler
+com/hukacode/common/validation/annotation/BankBranch.java
+ com.hukacode.common.validation.annotation.BankBranch
+ com.hukacode.common.validation.annotation.BankBranch$List
+com/hukacode/common/exception/PermissionException.java
+ com.hukacode.common.exception.PermissionException
+com/hukacode/common/validation/annotation/FirstName.java
+ com.hukacode.common.validation.annotation.FirstName
+ com.hukacode.common.validation.annotation.FirstName$List
+com/hukacode/common/validation/annotation/BankName.java
+ com.hukacode.common.validation.annotation.BankName
+ com.hukacode.common.validation.annotation.BankName$List
+com/hukacode/common/validation/annotation/HouseNumber.java
+ com.hukacode.common.validation.annotation.HouseNumber
+ com.hukacode.common.validation.annotation.HouseNumber$List
+com/hukacode/common/exception/SystemException.java
+ com.hukacode.common.exception.SystemException

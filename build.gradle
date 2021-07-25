@@ -1,0 +1,57 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
+plugins {
+    id "org.springframework.boot" version "2.5.3" apply false
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id "com.diffplug.spotless" version "5.14.1"
+}
+apply plugin: "java"
+apply plugin: "io.spring.dependency-management"
+apply plugin: "com.diffplug.spotless"
+
+description = "Common files"
+group = "com.hukacode.common"
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
+
+    implementation("jakarta.validation:jakarta.validation-api")
+}
+
+dependencyManagement {
+    imports {
+        mavenBom SpringBootPlugin.BOM_COORDINATES
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+spotless {
+    // ratchetFrom "origin/main"
+    format "misc", {
+        target "*.gradle", "*.md", ".gitignore"
+        trimTrailingWhitespace()
+        indentWithSpaces(2)
+        endWithNewline()
+    }
+    java {
+        toggleOffOn("formatter:off", "formatter:on")
+        target "src/*/java/**/*.java"
+        importOrder("java", "javax")
+        removeUnusedImports()
+        googleJavaFormat()
+        licenseHeaderFile rootProject.file("spotless.license")
+    }
+}
+compileJava.dependsOn spotlessApply
