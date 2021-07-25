@@ -5,14 +5,15 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
     id "com.diffplug.spotless" version "5.14.1"
+    id 'maven-publish'
 }
 apply plugin: "java"
 apply plugin: "io.spring.dependency-management"
 apply plugin: "com.diffplug.spotless"
 
 description = "Common files"
-group = "com.hukacode.common"
-version = '0.0.1-SNAPSHOT'
+group = "com.hukacode"
+version = '0.0.1'
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
 
@@ -55,3 +56,49 @@ spotless {
     }
 }
 compileJava.dependsOn spotlessApply
+
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'huka-common'
+            from components.java
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+            pom {
+                name = 'Huka common files'
+                description = 'Huka common files'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'huka'
+                        name = 'Huka'
+                        email = 'mr.kharhums@gmail.com'
+                    }
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            def releasesRepoUrl = layout.buildDirectory.dir('repos/releases')
+            def snapshotsRepoUrl = layout.buildDirectory.dir('repos/snapshots')
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+        }
+    }
+}
